@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Monthsary — 9 Months Together</title>
+
+<!-- Favicon: the blue tulip bouquet badge -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Google Fonts: script for the romantic heading, serif for section titles, sans for body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for lightweight icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Floating hearts layer (decorative, populated by JS, aria-hidden) -->
+<div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <i class="fa-solid fa-heart"></i>
+      </span>
+      <span class="brand-text">
+        <span class="brand-title">Our Monthsary</span>
+        <span class="brand-sub">9 MONTHS &amp; COUNTING</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active" data-section="home">Home</a>
+      <a href="#journey" class="nav-link" data-section="journey">Our Journey</a>
+      <a href="#memories" class="nav-link" data-section="memories">Memories</a>
+      <a href="#messages" class="nav-link" data-section="messages">Messages</a>
+      <a href="#forever" class="nav-link" data-section="forever">Forever</a>
+    </nav>
+
+    <div class="nav-meta">
+      <i class="fa-regular fa-heart"></i>
+      <span class="nav-divider">|</span>
+      <span>9 Months</span>
+      <i class="fa-solid fa-infinity"></i>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mobile-link" data-section="home">Home</a>
+    <a href="#journey" class="mobile-link" data-section="journey">Our Journey</a>
+    <a href="#memories" class="mobile-link" data-section="memories">Memories</a>
+    <a href="#messages" class="mobile-link" data-section="messages">Messages</a>
+    <a href="#forever" class="mobile-link" data-section="forever">Forever</a>
+  </div>
+</header>
+
+<!-- ============ SECTION 1 — HOME ============ -->
+<section id="home" class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-text">
+      <p class="eyebrow reveal">Welcome to our</p>
+      <h1 class="hero-title reveal">Monthsary</h1>
+      <p class="hero-subtitle reveal">9 months together</p>
+
+      <p class="hero-message reveal">
+        In every moment, you make my world brighter,
+        my heart fuller, and my life more beautiful.<br><br>
+        Thank you for being you —<br>
+        my love, my sapyot, my baduday.
+      </p>
+
+      <p class="hero-handwritten reveal">
+        Here's to more months,<br>
+        more memories, and forever us. <span class="tiny-heart">♡</span>
+      </p>
+
+      <a href="#journey" class="btn-primary reveal">
+        <i class="fa-regular fa-heart"></i>
+        Explore Our Journey
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="bouquet-stage">
+
+        <!-- Soft ambient glow behind the bouquet — no rectangle, no border, no card -->
+        <div class="bouquet-glow" aria-hidden="true"></div>
+
+        <!--
+          REAL PHOTO GOES HERE.
+          Drop your own bouquet photo in at:
+            assets/images/blue-tulip-bouquet.png
+          The moment that file exists and loads, it automatically replaces
+          the illustration below — no code changes needed.
+        -->
+        <img
+          src="assets/images/blue-tulip-bouquet.png"
+          alt="A large bouquet of blue tulips wrapped in soft blue paper with a blue ribbon"
+          class="bouquet-photo"
+          id="bouquetPhoto"
+        >
+
+        <!-- Illustrated bouquet — shown until a real photo is added above -->
+        <svg class="bouquet-illustration" id="bouquetIllustration" viewBox="0 0 600 720" role="img" aria-label="Illustration of a bouquet of blue tulips">
+          <defs>
+            <linearGradient id="tulipLight" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#DCEEFF"/>
+              <stop offset="100%" stop-color="#A9D0F5"/>
+            </linearGradient>
+            <linearGradient id="tulipMid" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#A9D0F5"/>
+              <stop offset="100%" stop-color="#6FA8E8"/>
+            </linearGradient>
+            <linearGradient id="tulipDeep" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#6FA8E8"/>
+              <stop offset="100%" stop-color="#2F75C9"/>
+            </linearGradient>
+            <linearGradient id="paperGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="100%" stop-color="#DCEEFF"/>
+            </linearGradient>
+            <linearGradient id="ribbonGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2F75C9"/>
+              <stop offset="100%" stop-color="#1F5FAF"/>
+            </linearGradient>
+            <symbol id="tulipHead" viewBox="0 0 120 140">
+              <path d="M60,138 C26,138 16,102 21,80 C10,60 20,22 46,16 C51,6 56,20 60,34 C64,20 69,6 74,16 C100,22 110,60 99,80 C104,102 94,138 60,138 Z" fill="url(#tulipMid)"/>
+              <path d="M60,138 C40,138 30,110 33,90 C26,74 32,40 50,28 C55,20 58,28 60,38 C60,38 60,38 60,38 C62,28 65,20 70,28 C88,40 94,74 87,90 C90,110 80,138 60,138 Z" fill="#FFFFFF" opacity="0.16"/>
+            </symbol>
+            <symbol id="leaf" viewBox="0 0 60 200">
+              <path d="M30,200 C10,150 5,90 30,0 C55,90 50,150 30,200 Z" fill="#8FBF9A"/>
+            </symbol>
+          </defs>
+
+          <!-- stems -->
+          <g stroke="#8FBF9A" stroke-width="5" fill="none" stroke-linecap="round">
+            <path d="M300,430 C295,500 290,540 300,600"/>
+            <path d="M255,420 C245,480 250,530 260,600"/>
+            <path d="M345,420 C355,480 350,530 340,600"/>
+            <path d="M210,440 C195,490 205,530 220,600"/>
+            <path d="M390,440 C405,490 395,530 380,600"/>
+          </g>
+
+          <!-- leaves -->
+          <use href="#leaf" x="180" y="420" width="40" height="140" transform="rotate(-18 200 480)" opacity="0.9"/>
+          <use href="#leaf" x="380" y="420" width="40" height="140" transform="rotate(18 400 480)" opacity="0.9"/>
+          <use href="#leaf" x="290" y="440" width="34" height="120" transform="rotate(4 305 490)" opacity="0.85"/>
+
+          <!-- back row tulips (lighter, smaller = further away) -->
+          <use href="#tulipHead" x="150" y="200" width="90" height="110" fill="url(#tulipLight)" transform="rotate(-10 195 255)"/>
+          <use href="#tulipHead" x="380" y="190" width="90" height="110" fill="url(#tulipLight)" transform="rotate(12 425 245)"/>
+          <use href="#tulipHead" x="260" y="150" width="90" height="110" fill="url(#tulipLight)" transform="rotate(-2 305 205)"/>
+
+          <!-- middle row -->
+          <use href="#tulipHead" x="190" y="260" width="100" height="120" fill="url(#tulipMid)" transform="rotate(-8 240 320)"/>
+          <use href="#tulipHead" x="340" y="255" width="100" height="120" fill="url(#tulipMid)" transform="rotate(9 390 315)"/>
+          <use href="#tulipHead" x="270" y="230" width="105" height="125" fill="url(#tulipMid)" transform="rotate(1 322 292)"/>
+
+          <!-- front row (deeper blue, largest = closest) -->
+          <use href="#tulipHead" x="150" y="330" width="115" height="135" fill="url(#tulipDeep)" transform="rotate(-14 207 397)"/>
+          <use href="#tulipHead" x="335" y="325" width="115" height="135" fill="url(#tulipDeep)" transform="rotate(13 392 392)"/>
+          <use href="#tulipHead" x="245" y="300" width="120" height="140" fill="url(#tulipDeep)" transform="rotate(-1 305 370)"/>
+
+          <!-- baby's breath -->
+          <g fill="#FFFFFF" stroke="#DCEEFF" stroke-width="1">
+            <circle cx="175" cy="180" r="5"/>
+            <circle cx="195" cy="160" r="4"/>
+            <circle cx="410" cy="170" r="5"/>
+            <circle cx="430" cy="195" r="4"/>
+            <circle cx="300" cy="130" r="5"/>
+            <circle cx="230" cy="205" r="4"/>
+            <circle cx="380" cy="215" r="4"/>
+            <circle cx="320" cy="145" r="4"/>
+            <circle cx="160" cy="230" r="4"/>
+            <circle cx="445" cy="235" r="4"/>
+          </g>
+
+          <!-- wrapping paper -->
+          <path d="M180,560 C180,610 240,660 300,680 C360,660 420,610 420,560 C420,540 300,520 300,520 C300,520 180,540 180,560 Z" fill="url(#paperGrad)" opacity="0.9"/>
+
+          <!-- ribbon bow -->
+          <g transform="translate(300 588)">
+            <path d="M0,0 C-45,-24 -70,4 -50,24 C-30,40 -10,18 0,0 Z" fill="url(#ribbonGrad)"/>
+            <path d="M0,0 C45,-24 70,4 50,24 C30,40 10,18 0,0 Z" fill="url(#ribbonGrad)"/>
+            <circle cx="0" cy="2" r="12" fill="#1F5FAF"/>
+            <path d="M-8,10 C-20,40 -26,70 -14,96 C-6,72 -4,40 -8,10 Z" fill="url(#ribbonGrad)"/>
+            <path d="M8,10 C20,40 26,70 14,96 C6,72 4,40 8,10 Z" fill="url(#ribbonGrad)"/>
+          </g>
+        </svg>
+
+        <div class="bouquet-note">Thank you for being<br>part of my story <span class="tiny-heart">♡</span></div>
+
+        <!-- tiny decorative accents around the bouquet -->
+        <i class="fa-solid fa-heart bouquet-deco deco-1" aria-hidden="true"></i>
+        <i class="fa-solid fa-heart bouquet-deco deco-2" aria-hidden="true"></i>
+        <i class="fa-solid fa-sparkle bouquet-deco deco-3" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="hero-polaroids reveal">
+      <svg class="ribbon-curl" viewBox="0 0 220 120" aria-hidden="true">
+        <path d="M0,20 C40,0 60,40 100,25 C140,10 150,55 200,45" fill="none" stroke="#A9D0F5" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <img src="assets/images/nov19-02.jpg" alt="The two of us, November 19" class="polaroid p1" style="--r:-6deg">
+      <img src="assets/images/month-01b.jpg" alt="One month together" class="polaroid p2" style="--r:4deg">
+      <img src="assets/images/dec19-yes.jpg" alt="The day it became official, December 19" class="polaroid p3" style="--r:-3deg">
+      <i class="fa-solid fa-heart polaroid-heart" aria-hidden="true"></i>
+    </div>
+
+    <a href="#journey" class="scroll-indicator" aria-label="Scroll down">
+      <i class="fa-solid fa-computer-mouse"></i>
+      <span>Scroll Down</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 — OUR JOURNEY ============ -->
+<section id="journey" class="journey">
+  <div class="section-inner">
+    <h2 class="section-title reveal">Our Journey</h2>
+    <p class="section-subtitle reveal">Every chapter brought us closer.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">November 19</span>
+          <h3>The Beginning</h3>
+          <p>The day we started getting to know each other — the first spark of us.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">December 19</span>
+          <h3>She Asked, He Said Yes</h3>
+          <p>The day I finally asked you to be mine — and you said yes.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Month 1</span>
+          <h3>Our First Month</h3>
+          <p>Still learning each other, already sure this was worth choosing.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Month 2</span>
+          <h3>Growing Closer</h3>
+          <p>More laughter, more memories, more reasons to smile.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Month 3</span>
+          <h3>Getting Comfortable</h3>
+          <p>Settling into us — easier laughs, easier silences.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Month 4</span>
+          <h3>More of Us</h3>
+          <p>Another month, another reason to fall for you again.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Month 5</span>
+          <h3>Halfway There</h3>
+          <p>Five months in, and it still feels like the beginning.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Month 6</span>
+          <h3>Choosing Each Other</h3>
+          <p>Half a year of choosing you, over and over.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Month 7</span>
+          <h3>Another Chapter</h3>
+          <p>Seven months of inside jokes and easy comfort.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Month 8</span>
+          <h3>Almost Nine Months</h3>
+          <p>So close to nine months, and still falling harder.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-editable>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Month 9</span>
+          <h3>Here We Are</h3>
+          <p>Still choosing each other, every single day.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 — OUR MEMORIES ============ -->
+<section id="memories" class="memories">
+  <div class="section-inner">
+    <h2 class="section-title reveal">Our Memories</h2>
+    <p class="section-subtitle reveal">A little scrapbook of us.</p>
+
+    <div class="gallery" id="gallery">
+
+      <!-- November 19 — how it started (3 real photos) -->
+      <figure class="polaroid-card reveal" style="--r:-4deg"
+              data-gallery='["assets/images/nov19-01.jpg","assets/images/nov19-02.jpg","assets/images/nov19-03.jpg"]'
+              data-caption="November 19 — How it all started.">
+        <img src="assets/images/nov19-01.jpg" alt="The two of us on November 19, the day we started talking" loading="lazy">
+        <figcaption>
+          <span class="card-title">November 19</span>
+          <span class="card-date">How it all started</span>
+        </figcaption>
+      </figure>
+
+      <!-- December 19 — the day he said yes -->
+      <figure class="polaroid-card reveal" style="--r:3deg"
+              data-gallery='["assets/images/dec19-yes.jpg"]'
+              data-caption="December 19 — She asked, and he said yes.">
+        <img src="assets/images/dec19-yes.jpg" alt="The day she courted him and he said yes, December 19" loading="lazy">
+        <figcaption>
+          <span class="card-title">December 19</span>
+          <span class="card-date">She asked, he said yes</span>
+        </figcaption>
+      </figure>
+
+      <!-- Month 1 (2 real photos) -->
+      <figure class="polaroid-card reveal" style="--r:-2deg"
+              data-gallery='["assets/images/month-01a.jpg","assets/images/month-01b.jpg"]'
+              data-caption="Month 1 — Our first little chapter together.">
+        <img src="assets/images/month-01a.jpg" alt="One month together" loading="lazy">
+        <figcaption>
+          <span class="card-title">January 23</span>
+          <span class="card-date">Our first little chapter</span>
+        </figcaption>
+      </figure>
+
+      <!-- Month 2 (2 real photos) -->
+      <figure class="polaroid-card reveal" style="--r:5deg"
+              data-gallery='["assets/images/month-02a.jpg","assets/images/month-02b.jpg"]'
+              data-caption="Month 2 — Another month, another reason to smile.">
+        <img src="assets/images/month-02a.jpg" alt="Two months together" loading="lazy">
+        <figcaption>
+          <span class="card-title">February 14</span>
+          <span class="card-date">Another reason to smile</span>
+        </figcaption>
+      </figure>
+
+      <!-- Months 3-9 placeholders — replace src and remove the .is-placeholder class + data-gallery once you add real photos -->
+      <!-- Month 3 (2 real photos) -->
+      <figure class="polaroid-card reveal" style="--r:-3deg"
+              data-gallery='["assets/images/month-03a.jpg","assets/images/month-03b.jpg"]'
+              data-caption="Month 3 — Getting comfortable.">
+        <img src="assets/images/month-03a.jpg" alt="Three months together" loading="lazy">
+        <figcaption>
+          <span class="card-title">March 25</span>
+          <span class="card-date">Getting comfortable</span>
+        </figcaption>
+      </figure>
+
+      <!-- Month 4 (1 real photo) -->
+      <figure class="polaroid-card reveal" style="--r:4deg"
+              data-gallery='["assets/images/month-04.jpg"]'
+              data-caption="Month 4 — More of us.">
+        <img src="assets/images/month-04.jpg" alt="Four months together" loading="lazy">
+        <figcaption>
+          <span class="card-title">April 15</span>
+          <span class="card-date">More of us</span>
+        </figcaption>
+      </figure>
+
+      <!-- Month 5 (3 real photos) -->
+      <figure class="polaroid-card reveal" style="--r:-5deg"
+              data-gallery='["assets/images/month-05a.jpg","assets/images/month-05b.jpg","assets/images/month-05c.jpg"]'
+              data-caption="Month 5 — Halfway there.">
+        <img src="assets/images/month-05a.jpg" alt="Five months together" loading="lazy">
+        <figcaption>
+          <span class="card-title">May 15</span>
+          <span class="card-date">Halfway there</span>
+        </figcaption>
+      </figure>
+
+      <!-- Month 6 (3 real photos) -->
+      <figure class="polaroid-card reveal" style="--r:2deg"
+              data-gallery='["assets/images/month-06a.jpg","assets/images/month-06b.jpg","assets/images/month-06c.jpg"]'
+              data-caption="Month 6 — Choosing each other.">
+        <img src="assets/images/month-06a.jpg" alt="Six months together" loading="lazy">
+        <figcaption>
+          <span class="card-title">June 30</span>
+          <span class="card-date">Choosing each other</span>
+        </figcaption>
+      </figure>
+
+      <!-- Month 7 (3 real photos) -->
+      <figure class="polaroid-card reveal" style="--r:-2deg"
+              data-gallery='["assets/images/month-07a.jpg","assets/images/month-07b.jpg","assets/images/month-07c.jpg"]'
+              data-caption="Month 7 — Another chapter of us.">
+        <img src="assets/images/month-07a.jpg" alt="Seven months together" loading="lazy">
+        <figcaption>
+          <span class="card-title">July 15</span>
+          <span class="card-date">Another chapter of us</span>
+        </figcaption>
+      </figure>
+
+      <!-- Month 8 (4 real photos) -->
+      <figure class="polaroid-card reveal" style="--r:5deg"
+              data-gallery='["assets/images/month-08a.jpg","assets/images/month-08b.jpg","assets/images/month-08c.jpg","assets/images/month-08d.jpg"]'
+              data-caption="Month 8 — Almost nine months.">
+        <img src="assets/images/month-08a.jpg" alt="Eight months together" loading="lazy">
+        <figcaption>
+          <span class="card-title">August 27</span>
+          <span class="card-date">Almost nine months</span>
+        </figcaption>
+      </figure>
+
+      <figure class="polaroid-card is-placeholder reveal" style="--r:-4deg" data-caption="Month 9">
+        <div class="placeholder-box">
+          <i class="fa-regular fa-image"></i>
+          <span>assets/images/month-09.jpg</span>
+        </div>
+        <figcaption>
+          <span class="card-title">Month 9</span>
+          <span class="card-date">Add your photo</span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox (shared by all gallery cards) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <figure class="lightbox-content">
+    <img src="" alt="" id="lightboxImg">
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+</div>
+
+<!-- ============ SECTION 4 — LOVE MESSAGES ============ -->
+<section id="messages" class="messages">
+  <div class="section-inner">
+    <h2 class="section-title reveal">A Little Message For You My love</h2>
+
+    <div class="letter reveal">
+      <p>To the person who makes ordinary days feel special,</p>
+      <p>
+        These past nine months have given me so many memories
+        that I never want to forget.
+      </p>
+      <p>
+        Thank you for every laugh, every conversation,
+        every little moment, and simply for being part of my life.
+      </p>
+      <p>
+        I may not always have the perfect words,
+        but I hope you always know how much you mean to me.
+      </p>
+      <p>
+        I’m sorry for the times my attitude gets in the way and
+         for the moments when I hurt you without meaning to.
+      </p>
+      <p>
+        I know I’m not perfect, but I’m always willing to learn,
+         grow, and do better for us.
+      </p>
+      <p>
+        Thank you for being patient with me and for staying through my imperfect days.
+      </p>
+      <p>
+         I love you so much my langlang, and I’ll keep choosing you and our relationship every day. 💙🌷
+      </p>
+      <p class="letter-highlight">Happy Monthsary, my love.</p>
+      <p>
+        Here's to more memories, more adventures,
+        more laughter, and more months together.
+      </p>
+
+      <div class="letter-signature">
+        <span>Always yours lablab</span>
+        <span class="signature-heart">♡</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5 — FOREVER ============ -->
+<section id="forever" class="forever">
+  <div class="section-inner">
+    <h2 class="forever-title reveal">To More Months With You</h2>
+    <p class="forever-subtitle reveal">Our story is still being written.</p>
+
+    <div class="forever-stats reveal">
+      <div class="stat">
+        <span class="stat-number">9</span>
+        <span class="stat-label">Months</span>
+      </div>
+      <span class="stat-plus">+</span>
+      <div class="stat">
+        <span class="stat-number"><i class="fa-solid fa-infinity"></i></span>
+        <span class="stat-label">Memories</span>
+      </div>
+      <span class="stat-plus">+</span>
+      <div class="stat">
+        <span class="stat-number"><i class="fa-solid fa-heart"></i></span>
+        <span class="stat-label">One Beautiful Story</span>
+      </div>
+    </div>
+
+    <div class="forever-illustration reveal" aria-hidden="true">
+      <i class="fa-solid fa-heart"></i>
+    </div>
+
+    <p class="forever-final reveal">Happy 9th Monthsary, My Love.</p>
+    <p class="forever-thanks reveal">Thank you for being part of my story.</p>
+  </div>
+
+  <div class="music-player" id="musicPlayer">
+    <div class="music-hint" id="musicHint">Tap to play our song <span class="tiny-heart">♡</span></div>
+    <button class="music-toggle" id="musicToggle" aria-label="Play our song" title="Play our song">
+      <i class="fa-solid fa-music"></i>
+    </button>
+    <div class="music-track-label" id="musicTrackLabel">
+      <span class="track-title" id="trackTitle">Best Part</span>
+      <span class="track-artist" id="trackArtist">Daniel Caesar</span>
+    </div>
+  </div>
+  <!--
+    YOUR SONGS GO HERE.
+    Save your two MP3 files at:
+      assets/music/Daniel Caesar Best Part.mp3
+      assets/music/Daniel Caesar Neu Roses.mp3
+    They'll play in that order, one after another, on a loop.
+    The playlist itself (titles, artists, filenames, order) is defined
+    in js/script.js — see the "playlist" array near the top.
+  -->
+  <audio id="bgMusic" preload="none"></audio>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>
